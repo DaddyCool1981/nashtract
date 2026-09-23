@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nashtract-web",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@nashtract/web", "dev"],
+      "port": 3000
+    }
+  ]
+}

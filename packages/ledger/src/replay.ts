@@ -4,9 +4,9 @@
  * identical domain state). This module is pure — no I/O, no clock, no
  * randomness — so the same envelopes always produce the same state.
  *
- * Two documented gaps between SPEC.md §11 (the ledger event union) and
- * §12 (the milestone state diagram) are resolved here rather than left
- * silently unhandled:
+ * Three documented gaps between SPEC.md §11 (the ledger event union)
+ * and §12 (the milestone state diagram) are resolved here rather than
+ * left silently unhandled:
  *
  * 1. §12 shows `PROPOSED -> REFUSED`, but §11's event union has no
  *    "refused" event. §11 *does* list `MilestoneCancelled`. Refusing an
@@ -14,16 +14,21 @@
  *    exposure has ever existed), so a `MilestoneCancelled` observed
  *    while a milestone is still `PROPOSED` is treated as that refusal:
  *    the core FSM's `REFUSE` transition fires, landing on `REFUSED`.
- * 2. §11 lists `MilestoneCancelled` for milestones *beyond* proposal,
- *    but §12's diagram has no `CANCELLED` state at all. For those
- *    (ACCEPTED, ACTIVE, BOUNDARY_REACHED, CONTINUATION_PENDING,
- *    RESULT_SUBMITTED) this module does not force an invented FSM
- *    state — it layers an orthogonal `cancellation` flag on the
- *    aggregate instead, and refuses any further event on that
+ * 2. §12 also has a real, named `CONTINUATION_PENDING -> STOPPED` edge,
+ *    but §11 has no event for declining a proposed continuation either.
+ *    Same reasoning: a `MilestoneCancelled` observed in
+ *    `CONTINUATION_PENDING` fires the FSM's own `STOP` transition.
+ * 3. §11 lists `MilestoneCancelled` for milestones *beyond* proposal,
+ *    but §12's diagram has no `CANCELLED` state at all. For the states
+ *    with no diagram edge for this at all (ACCEPTED, ACTIVE,
+ *    BOUNDARY_REACHED, RESULT_SUBMITTED) this module does not force an
+ *    invented FSM state — it layers an orthogonal `cancellation` flag
+ *    on the aggregate instead, and refuses any further event on that
  *    milestone. `VALIDATED`/`SETTLED` milestones cannot be cancelled.
  *
- * Both are called out in README.md's "known open items" and should be
- * revisited once the ledger/product layer has real usage to learn from.
+ * All three are called out in README.md's "known open items" and
+ * should be revisited once the ledger/product layer has real usage to
+ * learn from.
  */
 
 import {
@@ -329,6 +334,15 @@ function applyEnvelope(state: ProjectState, envelope: LedgerEnvelope): ProjectSt
         // Gap resolution #1: refusing a still-PROPOSED milestone.
         if (m.state === "PROPOSED") {
           return { ...m, state: fsm(m, "REFUSE", envelope) };
+        }
+        // Gap resolution #3: declining a proposed continuation. §12's
+        // diagram has a real, named CONTINUATION_PENDING -> STOPPED
+        // edge (unlike the other cancellation cases below, which have
+        // no diagram edge at all) — §11 just has no dedicated ledger
+        // event for it. Reusing MilestoneCancelled here fires the
+        // FSM's own STOP transition instead of the generic flag below.
+        if (m.state === "CONTINUATION_PENDING") {
+          return { ...m, state: fsm(m, "STOP", envelope) };
         }
         // Gap resolution #2: orthogonal cancellation flag for everything
         // past proposal but before a validated/settled result.

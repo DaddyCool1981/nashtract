@@ -9,7 +9,6 @@
  * There is deliberately no `remove`/`update` method on this class.
  */
 
-import { randomUUID } from "node:crypto";
 import { computeEnvelopeHash, type HashableEnvelopeFields, type LedgerEnvelope } from "./envelope.js";
 import { HashChainMismatchError, NonMonotonicSequenceError } from "./errors.js";
 import type { NashTractEvent } from "./events.js";
@@ -62,7 +61,7 @@ export class InMemoryLedgerStore {
     const previous = chain[chain.length - 1];
 
     const fields: HashableEnvelopeFields = {
-      id: input.id ?? randomUUID(),
+      id: input.id ?? crypto.randomUUID(),
       projectId: input.projectId,
       ...(input.milestoneId !== undefined ? { milestoneId: input.milestoneId } : {}),
       sequence: previous ? previous.sequence + 1 : 1,

@@ -207,4 +207,21 @@ describe("documented gap resolutions", () => {
     appendEvent(store, projectId, "MilestoneCancelled", { milestoneId, reason: "too late" }, "client-1");
     expect(() => replayProject(store.list(projectId))).toThrow(InvalidLedgerEventError);
   });
+
+  it("gap #2: MilestoneCancelled on a CONTINUATION_PENDING milestone fires the FSM's own STOP transition (SPEC.md §12)", () => {
+    const { store, projectId, milestoneId } = activeMilestoneScenario({
+      estimateDays: 5,
+      boundaryDays: 8,
+      beta: 0.5,
+    });
+    appendEvent(store, projectId, "EffortRecorded", { milestoneId, days: 8 }, "provider-1");
+    appendEvent(store, projectId, "BoundaryReached", { milestoneId }, "system");
+    appendEvent(store, projectId, "ContinuationProposed", { milestoneId, additionalBoundaryDays: 4 }, "provider-1");
+    appendEvent(store, projectId, "MilestoneCancelled", { milestoneId, reason: "client declined continuation" }, "client-1");
+
+    const state = replayProject(store.list(projectId));
+    const milestone = state.milestones.get(milestoneId)!;
+    expect(milestone.state).toBe("STOPPED"); // a real terminal FSM state, not the orthogonal cancellation flag
+    expect(milestone.cancellation).toBeUndefined();
+  });
 });

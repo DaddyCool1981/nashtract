@@ -8,3 +8,6 @@ coverage/
 .env.*
 !.env.example
 .next/
+
+# Kept locally as a working reference; not published in the public repo.
+SPEC.md

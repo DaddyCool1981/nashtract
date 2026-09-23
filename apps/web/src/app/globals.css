@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — same system as ytechnology.eu: deep near-black,
+ * off-white ink, one electric-blue accent used sparingly. NashTract
+ * adds a small set of desaturated semantic colors (savings vs overrun,
+ * boundary warning, refused/cancelled) because this is a financial
+ * protocol and those deltas need to be scannable — kept muted, not
+ * "dashboard bright", to stay in the same restrained register.
+ */
+:root {
+  --bg: #0a0a0b;
+  --bg-2: #0c0c0e;
+  --panel: #101013;
+  --ink: #f3f2ed;
+  --ink-soft: #9b9b96;
+  --ink-faint: #605f5c;
+  --line: rgba(243, 242, 237, 0.09);
+  --line-2: rgba(243, 242, 237, 0.05);
+  --accent: #3b5bff;
+  --accent-dim: rgba(59, 91, 255, 0.14);
+  --accent-ink: #eef1ff;
+
+  --good: #4cbf94;
+  --good-dim: rgba(76, 191, 148, 0.14);
+  --warn: #d9a441;
+  --warn-dim: rgba(217, 164, 65, 0.14);
+  --danger: #e2685f;
+  --danger-dim: rgba(226, 104, 95, 0.14);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --maxw: 960px;
+  --pad: clamp(20px, 5vw, 56px);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-accent-ink: var(--accent-ink);
+  --color-good: var(--good);
+  --color-good-dim: var(--good-dim);
+  --color-warn: var(--warn);
+  --color-warn-dim: var(--warn-dim);
+  --color-danger: var(--danger);
+  --color-danger-dim: var(--danger-dim);
+
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent-dim);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
