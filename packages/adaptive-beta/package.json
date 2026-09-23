@@ -1,0 +1,31 @@
+{
+  "name": "@nashtract/adaptive-beta",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Experimental Bayesian calibration policy (SPEC.md §8): reacts to persistent, statistically significant estimation bias, not to single-milestone noise.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@nashtract/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@fast-check/vitest": "^0.1.6",
+    "fast-check": "^3.23.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.9"
+  }
+}

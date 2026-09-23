@@ -28,6 +28,7 @@ export type {
 
 export { calculateSettlement, calculateMaximumExposure } from "./settlement.js";
 export { calculateCalibrationObservation } from "./calibration.js";
+export { FixedBetaPolicy, FIXED_BETA_POLICY_VERSION_V0 } from "./fixedBetaPolicy.js";
 
 export type { MilestoneState, MilestoneEvent } from "./stateMachine.js";
 export {

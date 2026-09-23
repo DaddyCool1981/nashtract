@@ -1,6 +1,6 @@
 # NashTract
 
-**Status:** experimental — Core 0.2 draft, Phase 2 (ledger) done, Phase 3 (adaptive beta) next.
+**Status:** experimental — Core 0.2 draft, Phase 3 (adaptive beta) done. Not enabled by default: SPEC.md §20 requires the Phase 5 attack suite to be reviewed first.
 
 NashTract is a milestone-based commercial settlement protocol for
 client–freelancer / consulting work. It freezes an expected effort, an
@@ -48,7 +48,7 @@ research/
 | --- | --- | --- |
 | 1 | Pure core: types, exact-decimal money, settlement equation, exposure, state machine, property tests | done |
 | 2 | Ledger: append-only events, deterministic replay, milestone lineage, calibration eligibility | done |
-| 3 | Adaptive beta: Normal-Inverse-Gamma posterior, fixed-beta fallback | not started |
+| 3 | Adaptive beta: Normal-Inverse-Gamma posterior, fixed-beta fallback | done (not enabled by default — pending Phase 5) |
 | 4 | Reference web UX | not started |
 | 5 | Attack/simulation suite | not started |
 
