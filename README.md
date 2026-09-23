@@ -21,14 +21,47 @@ sections cited below (§N) refer to it.
 
 ## Why
 
-Fixed-price estimates punish freelancers for genuine efficiency and
-expose clients to unbounded scope creep. Pure time-and-materials does
-the opposite. NashTract shares the deviation between estimate and
-actual effort according to a frozen factor (β), bounds the client's
-automatic exposure at acceptance time, and — experimentally — lets that
-factor drift toward fairness when a provider's estimates show
-persistent, statistically significant bias, without ever penalizing a
-single unlucky milestone.
+Client–freelancer work almost always gets priced one of two ways, and
+both quietly dump the risk on one side.
+
+**Fixed price.** Client and freelancer agree on a number upfront. If
+the work turns out harder than expected, the freelancer eats the
+difference — their genuine competence gets punished by someone else's
+bad estimate. If the freelancer overestimated the complexity, the
+client pays full price for work that didn't need it, with no way to
+tell padding from real difficulty after the fact — the estimate was
+never wrong enough to get caught.
+
+**Time and materials.** The client pays for hours worked. If the
+freelancer is fast, that skill isn't rewarded — it just means a
+smaller invoice, so there's no upside to being good at the job. And
+the client takes on a different risk: nothing but trust stops the
+clock from running a little longer than it needs to, milestone after
+milestone.
+
+NashTract doesn't pick a side between these two failure modes; it
+splits the difference, deliberately. Its settlement equation —
+`P(T) = r[M + β(T−M)]` — shares the gap between the agreed estimate
+(M) and the actual effort (T) according to a factor (β) frozen the
+moment both parties accept the milestone:
+
+- finish early, and part of that upside stays with the freelancer
+  instead of just shrinking the invoice;
+- run over, and the client isn't on the hook for the full cost of
+  every overrun the freelancer didn't fully see coming either;
+- and exposure is never open-ended either way — a hard boundary (U)
+  stops the milestone cold at a number both sides agreed to in
+  advance, and going further needs a fresh, explicit yes from both,
+  not an assumption.
+
+Over time, if a freelancer's estimates show a *persistent,
+statistically significant* pattern — not one unlucky milestone — the
+sharing factor can adapt to reflect that. The point isn't to catch
+anyone lying; NashTract never scores honesty, trust, or competence. It
+just tries to make silent padding and silent overrun economically
+uninteresting, for whichever side might otherwise be tempted, while
+leaving real collaboration and real efficiency worth exactly what they
+are.
 
 ## Repository structure
 
