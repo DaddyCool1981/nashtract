@@ -1,0 +1,32 @@
+{
+  "name": "@nashtract/ledger",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Append-only domain event ledger, deterministic replay, milestone lineage and calibration eligibility for NashTract.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@nashtract/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@fast-check/vitest": "^0.1.6",
+    "@types/node": "^22.10.5",
+    "fast-check": "^3.23.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.9"
+  }
+}

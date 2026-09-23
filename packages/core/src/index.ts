@@ -1,5 +1,9 @@
 export * as Money from "./money.js";
 export * as Rational from "./rational.js";
+/** The `Money` value type (as opposed to the `Money` namespace of functions above). */
+export type { Money as MoneyAmount } from "./money.js";
+/** The `Rational` value type (as opposed to the `Rational` namespace of functions above). */
+export type { Rational as RationalNumber } from "./rational.js";
 
 export { EFFORT_DECIMAL_PRECISION, effortToRational } from "./effort.js";
 export { BETA_DECIMAL_PRECISION, betaToRational } from "./beta.js";

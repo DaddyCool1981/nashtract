@@ -1,6 +1,6 @@
 # NashTract
 
-**Status:** experimental — Core 0.2 draft, Phase 1 (pure core) in progress.
+**Status:** experimental — Core 0.2 draft, Phase 2 (ledger) done, Phase 3 (adaptive beta) next.
 
 NashTract is a milestone-based commercial settlement protocol for
 client–freelancer / consulting work. It freezes an expected effort, an
@@ -46,8 +46,8 @@ research/
 
 | Phase | Scope | Status |
 | --- | --- | --- |
-| 1 | Pure core: types, exact-decimal money, settlement equation, exposure, state machine, property tests | in progress |
-| 2 | Ledger: append-only events, deterministic replay, milestone lineage | not started |
+| 1 | Pure core: types, exact-decimal money, settlement equation, exposure, state machine, property tests | done |
+| 2 | Ledger: append-only events, deterministic replay, milestone lineage, calibration eligibility | done |
 | 3 | Adaptive beta: Normal-Inverse-Gamma posterior, fixed-beta fallback | not started |
 | 4 | Reference web UX | not started |
 | 5 | Attack/simulation suite | not started |
@@ -68,9 +68,24 @@ in particular is pure and deterministic (see [SPEC.md §13](./SPEC.md)).
 ## Known open items
 
 The implementation surfaces spec gaps rather than silently resolving
-them — see inline `// Note (open item...)` comments (e.g.
-`packages/core/src/stateMachine.ts`) and [SPEC.md §18](./SPEC.md) for
-the protocol's own list of unresolved questions. This is a research
+them:
+
+- [`packages/core/src/stateMachine.ts`](./packages/core/src/stateMachine.ts):
+  SPEC.md §11 lists a `MilestoneCancelled` ledger event, but §12's
+  state diagram has no `CANCELLED` state. The pure core state machine
+  intentionally does not invent one.
+- [`packages/ledger/src/replay.ts`](./packages/ledger/src/replay.ts):
+  the ledger layer resolves that gap (and a related one — §12 shows
+  `PROPOSED -> REFUSED` but §11 has no dedicated "refused" event) with
+  two documented, revisable choices. Read the module docstring for the
+  reasoning.
+- SPEC.md §10's "open item" on same-result continuation economics is
+  implemented as lineage (a boundary extension on the *same* milestone,
+  per §12's diagram) — deliberately not as new-milestone economics,
+  pending the Phase 5 attack suite.
+
+See [SPEC.md §18](./SPEC.md) for the protocol's own list of unresolved
+questions. This is a research
 implementation: if the attack-simulation suite (Phase 5) shows the
 adaptive-beta policy introduces worse incentives than it removes, it is
 documented and reverted, not hidden.
