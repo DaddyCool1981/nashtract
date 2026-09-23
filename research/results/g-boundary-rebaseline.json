@@ -1,0 +1,122 @@
+{
+  "narrative": "A provider blows through the boundary, gets a small bounded continuation, blows through that too, and repeats several times. At every step the original estimate, beta, and already-consumed effort must remain exactly what was frozen at acceptance — only the effective boundary grows, by exactly the sum of accepted extensions, never more.",
+  "snapshots": [
+    {
+      "round": 0,
+      "consumedEffortDays": 6,
+      "effectiveBoundaryDays": 6,
+      "acceptedEstimateDays": 5,
+      "acceptedBoundaryDays": 6,
+      "acceptedBeta": 0.5
+    },
+    {
+      "round": 1,
+      "consumedEffortDays": 7,
+      "effectiveBoundaryDays": 7,
+      "acceptedEstimateDays": 5,
+      "acceptedBoundaryDays": 6,
+      "acceptedBeta": 0.5
+    },
+    {
+      "round": 2,
+      "consumedEffortDays": 8,
+      "effectiveBoundaryDays": 8,
+      "acceptedEstimateDays": 5,
+      "acceptedBoundaryDays": 6,
+      "acceptedBeta": 0.5
+    },
+    {
+      "round": 3,
+      "consumedEffortDays": 9,
+      "effectiveBoundaryDays": 9,
+      "acceptedEstimateDays": 5,
+      "acceptedBoundaryDays": 6,
+      "acceptedBeta": 0.5
+    },
+    {
+      "round": 4,
+      "consumedEffortDays": 10,
+      "effectiveBoundaryDays": 10,
+      "acceptedEstimateDays": 5,
+      "acceptedBoundaryDays": 6,
+      "acceptedBeta": 0.5
+    }
+  ],
+  "rejectedOversizedEffortRecording": true,
+  "finalMilestone": {
+    "milestoneId": "g-attack-m0",
+    "projectId": "g-attack",
+    "state": "SETTLED",
+    "proposedTerms": {
+      "result": {
+        "description": "Boundary/rebaseline attack target"
+      },
+      "estimateDays": 5,
+      "boundaryDays": 6,
+      "referenceRate": "1500.00 EUR",
+      "beta": 0.5,
+      "betaPolicyVersion": "fixed-beta-v0"
+    },
+    "acceptedByProvider": true,
+    "acceptedByClient": true,
+    "consumedEffortDays": 10,
+    "effortLog": [
+      {
+        "days": 6,
+        "recordedAt": "2026-01-07T00:00:00.000Z"
+      },
+      {
+        "days": 1,
+        "recordedAt": "2026-01-11T00:00:00.000Z"
+      },
+      {
+        "days": 1,
+        "recordedAt": "2026-01-15T00:00:00.000Z"
+      },
+      {
+        "days": 1,
+        "recordedAt": "2026-01-19T00:00:00.000Z"
+      },
+      {
+        "days": 1,
+        "recordedAt": "2026-01-23T00:00:00.000Z"
+      }
+    ],
+    "boundaryExtensions": [
+      {
+        "additionalDays": 1,
+        "proposedAt": "2026-01-09T00:00:00.000Z",
+        "acceptedAt": "2026-01-10T00:00:00.000Z"
+      },
+      {
+        "additionalDays": 1,
+        "proposedAt": "2026-01-13T00:00:00.000Z",
+        "acceptedAt": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "additionalDays": 1,
+        "proposedAt": "2026-01-17T00:00:00.000Z",
+        "acceptedAt": "2026-01-18T00:00:00.000Z"
+      },
+      {
+        "additionalDays": 1,
+        "proposedAt": "2026-01-21T00:00:00.000Z",
+        "acceptedAt": "2026-01-22T00:00:00.000Z"
+      }
+    ],
+    "scopeChanges": [],
+    "resultRejections": [],
+    "acceptedTerms": {
+      "result": {
+        "description": "Boundary/rebaseline attack target"
+      },
+      "estimateDays": 5,
+      "boundaryDays": 6,
+      "referenceRate": "1500.00 EUR",
+      "beta": 0.5,
+      "betaPolicyVersion": "fixed-beta-v0",
+      "acceptedAt": "2026-01-05T00:00:00.000Z"
+    },
+    "settledAt": "2026-01-26T00:00:00.000Z"
+  }
+}

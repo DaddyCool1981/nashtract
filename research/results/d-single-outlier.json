@@ -1,0 +1,14 @@
+{
+  "narrative": "A calibrated provider has one wildly atypical milestone — once far too fast (T/M = 0.25), once far too slow (T/M = 4) — surrounded by otherwise normal estimates. A single surprise, however extreme, must not be treated as persistent bias: adaptive beta should barely move.",
+  "calibratedBefore": 15,
+  "perRatio": {
+    "4": {
+      "outlierBetaAfter": 0.293819631854844,
+      "persistentBetaAtSameIndex": 9.576228698904288e-13
+    },
+    "0.25": {
+      "outlierBetaAfter": 0.706180368145156,
+      "persistentBetaAtSameIndex": 0.9999999999990423
+    }
+  }
+}

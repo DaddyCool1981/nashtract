@@ -1,0 +1,308 @@
+{
+  "narrative": "A calibrated provider hits one milestone where the client changed a required third-party integration mid-flight, tripling the effort. Declared and excluded from calibration, it should not move beta the way an unexplained 3x overrun would.",
+  "excluded": {
+    "finalBeta": 0.5,
+    "fullHistory": [
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m0",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m1",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m2",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m3",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m4",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m5",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m6",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m7",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m8",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m9",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 15,
+        "logError": 1.0986122886681096,
+        "milestoneId": "sim-1h31p5yrm21-m10",
+        "eligible": false,
+        "exclusionReason": "client changed a required third-party integration mid-flight"
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m11",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m12",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m13",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m14",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m15",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m16",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m17",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m18",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m19",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-1h31p5yrm21-m20",
+        "eligible": true
+      }
+    ]
+  },
+  "notExcluded": {
+    "finalBeta": 0.38919709806180924,
+    "fullHistory": [
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m0",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m1",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m2",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m3",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m4",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m5",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m6",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m7",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m8",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m9",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 15,
+        "logError": 1.0986122886681096,
+        "milestoneId": "sim-d62u6sgge9g-m10",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m11",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m12",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m13",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m14",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m15",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m16",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m17",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m18",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m19",
+        "eligible": true
+      },
+      {
+        "estimateDays": 5,
+        "actualDays": 5,
+        "logError": 0,
+        "milestoneId": "sim-d62u6sgge9g-m20",
+        "eligible": true
+      }
+    ]
+  }
+}

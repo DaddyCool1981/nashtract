@@ -1,6 +1,6 @@
 # NashTract
 
-**Status:** experimental — Core 0.2 draft, Phase 4 (reference web UX) in progress. Adaptive beta is not enabled by default: the spec requires the Phase 5 attack suite to be reviewed first.
+**Status:** experimental — Core 0.2 draft, all five spec-defined phases implemented. Adaptive beta is still not enabled by default in the reference web app pending a closer read of the Phase 5 findings below — see [`research/README.md`](./research/README.md) for what the attack suite actually found, including a real, documented limitation it did not hide.
 
 NashTract is a milestone-based commercial settlement protocol for
 client–freelancer / consulting work. It freezes an expected effort, an
@@ -40,7 +40,9 @@ packages/
 apps/
   web/            reference web UX (Phase 4)
 research/
-  simulations/    reproducible attack/simulation scenarios (Phase 5)
+  simulations/    the simulation engine, evaluation metrics, and JSON report generator
+  scenarios/      SPEC.md §16's seven attack/simulation scenario definitions (A-G)
+  results/        regenerated, reproducible JSON output — not hand-picked screenshots
 ```
 
 ## Status
@@ -50,8 +52,8 @@ research/
 | 1 | Pure core: types, exact-decimal money, settlement equation, exposure, state machine, property tests | done |
 | 2 | Ledger: append-only events, deterministic replay, milestone lineage, calibration eligibility | done |
 | 3 | Adaptive beta: Normal-Inverse-Gamma posterior, fixed-beta fallback | done (not enabled by default — pending Phase 5) |
-| 4 | Reference web UX | in progress |
-| 5 | Attack/simulation suite | not started |
+| 4 | Reference web UX | done |
+| 5 | Attack/simulation suite | done — see [`research/README.md`](./research/README.md) |
 
 ## Getting started
 
@@ -90,6 +92,15 @@ them:
   implemented as lineage (a boundary extension on the *same* milestone,
   per §12's diagram) — deliberately not as new-milestone economics,
   pending the Phase 5 attack suite.
+
+- `packages/adaptive-beta`'s Normal-Inverse-Gamma posterior accumulates
+  evidence over the whole eligible history with no forgetting or
+  windowing (SPEC.md §8 does not specify one). Phase 5's scenario E
+  found this makes recovery toward neutral slow after a provider
+  recalibrates their estimates — see
+  [`research/README.md`](./research/README.md#a-documented-limitation-not-a-hidden-one-specmd-21)
+  for the measured numbers. Whether V1 needs a windowed/decayed variant
+  is now an explicit, evidenced open question, not a guess.
 
 SPEC.md §18 lists the protocol's own unresolved questions. This is a
 research implementation: if the attack-simulation suite (Phase 5) shows

@@ -1,0 +1,110 @@
+{
+  "narrative": "A provider whose estimates are consistently too optimistic — every milestone overruns by a fixed factor. Persistent underestimation (T > M) should push adaptive beta toward 0 (fixed estimate), protecting the client from paying full reference rate for every overrun (SPEC.md §1).",
+  "observationsPerRatio": 16,
+  "perRatio": {
+    "2": {
+      "adaptive": {
+        "finalBeta": 1.5147539333959514e-9,
+        "evaluation": {
+          "cumulativeClientDeltaVsTimeAndMaterials": "108599.13 EUR",
+          "cumulativeProviderDeltaVsTimeAndMaterials": "-108599.13 EUR",
+          "cumulativeClientDeltaVsAcceptedEstimates": "-11400.87 EUR",
+          "meanBeta": 0.09500718698480724,
+          "betaVolatility": 0.19458184313407617,
+          "maxSingleStepBetaChange": 0.48604398338614685,
+          "observationsToDetectPersistentBias": 4,
+          "effortToDetectPersistentBias": 40
+        }
+      },
+      "fixed": {
+        "finalBeta": 0.5,
+        "evaluation": {
+          "cumulativeClientDeltaVsTimeAndMaterials": "60000.00 EUR",
+          "cumulativeProviderDeltaVsTimeAndMaterials": "-60000.00 EUR",
+          "cumulativeClientDeltaVsAcceptedEstimates": "-60000.00 EUR",
+          "meanBeta": 0.5,
+          "betaVolatility": 0,
+          "maxSingleStepBetaChange": 0
+        }
+      }
+    },
+    "1.1": {
+      "adaptive": {
+        "finalBeta": 0.27862583952295894,
+        "evaluation": {
+          "cumulativeClientDeltaVsTimeAndMaterials": "8015.71 EUR",
+          "cumulativeProviderDeltaVsTimeAndMaterials": "-8015.71 EUR",
+          "cumulativeClientDeltaVsAcceptedEstimates": "-3984.29 EUR",
+          "meanBeta": 0.3320245226147022,
+          "betaVolatility": 0.08277556354222519,
+          "maxSingleStepBetaChange": 0.15235609637280267,
+          "observationsToDetectPersistentBias": 7,
+          "effortToDetectPersistentBias": 38.5
+        }
+      },
+      "fixed": {
+        "finalBeta": 0.5,
+        "evaluation": {
+          "cumulativeClientDeltaVsTimeAndMaterials": "6000.00 EUR",
+          "cumulativeProviderDeltaVsTimeAndMaterials": "-6000.00 EUR",
+          "cumulativeClientDeltaVsAcceptedEstimates": "-6000.00 EUR",
+          "meanBeta": 0.5,
+          "betaVolatility": 0,
+          "maxSingleStepBetaChange": 0
+        }
+      }
+    },
+    "1.25": {
+      "adaptive": {
+        "finalBeta": 0.003659250700533523,
+        "evaluation": {
+          "cumulativeClientDeltaVsTimeAndMaterials": "25881.43 EUR",
+          "cumulativeProviderDeltaVsTimeAndMaterials": "-25881.43 EUR",
+          "cumulativeClientDeltaVsAcceptedEstimates": "-4118.57 EUR",
+          "meanBeta": 0.13728548769081556,
+          "betaVolatility": 0.18076577736023172,
+          "maxSingleStepBetaChange": 0.3202943588726391,
+          "observationsToDetectPersistentBias": 4,
+          "effortToDetectPersistentBias": 25
+        }
+      },
+      "fixed": {
+        "finalBeta": 0.5,
+        "evaluation": {
+          "cumulativeClientDeltaVsTimeAndMaterials": "15000.00 EUR",
+          "cumulativeProviderDeltaVsTimeAndMaterials": "-15000.00 EUR",
+          "cumulativeClientDeltaVsAcceptedEstimates": "-15000.00 EUR",
+          "meanBeta": 0.5,
+          "betaVolatility": 0,
+          "maxSingleStepBetaChange": 0
+        }
+      }
+    },
+    "1.5": {
+      "adaptive": {
+        "finalBeta": 0.0000016707427032414124,
+        "evaluation": {
+          "cumulativeClientDeltaVsTimeAndMaterials": "53949.53 EUR",
+          "cumulativeProviderDeltaVsTimeAndMaterials": "-53949.53 EUR",
+          "cumulativeClientDeltaVsAcceptedEstimates": "-6050.47 EUR",
+          "meanBeta": 0.10084091505383407,
+          "betaVolatility": 0.19233233064198874,
+          "maxSingleStepBetaChange": 0.4409763286289639,
+          "observationsToDetectPersistentBias": 4,
+          "effortToDetectPersistentBias": 30
+        }
+      },
+      "fixed": {
+        "finalBeta": 0.5,
+        "evaluation": {
+          "cumulativeClientDeltaVsTimeAndMaterials": "30000.00 EUR",
+          "cumulativeProviderDeltaVsTimeAndMaterials": "-30000.00 EUR",
+          "cumulativeClientDeltaVsAcceptedEstimates": "-30000.00 EUR",
+          "meanBeta": 0.5,
+          "betaVolatility": 0,
+          "maxSingleStepBetaChange": 0
+        }
+      }
+    }
+  }
+}
